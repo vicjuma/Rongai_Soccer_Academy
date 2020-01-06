@@ -7,7 +7,7 @@ const recipeRouter = require('./routes/recipe');
 
 app.use(cors());
 
-mongoose.connect('mongodb://localhost:27017/recipes').then(() => {
+mongoose.connect('mongodb+srv://vik:vik@rest-0wmlu.mongodb.net/test?retryWrites=true&w=majority?authSource=true').then(() => {
     console.log('database was successfully connected');
 }).catch((error) => {
     console.log('there was an error connecting to the database');
