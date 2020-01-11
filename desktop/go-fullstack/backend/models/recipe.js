@@ -6,7 +6,14 @@ const recipeSchema = mongoose.Schema({
     instructions: { type: String, required: true },
     time: { type: Number, required: true },
     difficulty: { type: Number, required: true },
-});
+},
+{
+    writeConcern: {
+      w: 'majority',
+      j: true,
+      wtimeout: 1000
+    }
+  });
 
 
 
