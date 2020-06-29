@@ -12,7 +12,7 @@ export class PlayerService {
   constructor(private http: HttpClient) {}
 
   getPlayers() {
-    this.http.get('http://localhost:5000/api/players/').subscribe(
+    this.http.get('https://rongai-soccer.herokuapp.com/api/players/').subscribe(
       (players: Player[]) => {
         this.players$.next(players);
       },
@@ -23,18 +23,18 @@ export class PlayerService {
   }
 
   getSinglePlayer(id: string) {
-    return this.http.get('http://localhost:5000/api/players/' + id);
+    return this.http.get('https://rongai-soccer.herokuapp.com/api/players/' + id);
   }
 
   savePlayer(player: Player) {
-    return this.http.post('http://localhost:5000/api/players/signup', player);
+    return this.http.post('https://rongai-soccer.herokuapp.com/api/players/signup/', player);
   }
 
   modifyPlayer(id: string, player: Player) {
-    return this.http.put('http://localhost:5000/api/players/' + id, player);
+    return this.http.put('https://rongai-soccer.herokuapp.com/api/players/' + id, player);
   }
 
   deletePlayer(id: string) {
-    return this.http.delete('http://localhost:5000/api/players/' + id);
+    return this.http.delete('https://rongai-soccer.herokuapp.com/api/players/' + id);
   }
 }
