@@ -1,0 +1,22 @@
+<mat-spinner *ngIf="loading"></mat-spinner>
+<mat-card *ngIf="!loading">
+  <mat-card-header><h1>{{ player?.player.playerFirstName + " " + player?.player.playerLastName  }}</h1></mat-card-header>
+  <mat-card-content>
+    <h3 class="mat-h3">Parent's Info</h3>
+    <p><strong>Parent's Name:   </strong>{{ player?.player.parentFirstName + " " + player?.player.parentLastName }}</p>
+    <p><strong>Parent's Cellphone:   </strong>{{ player?.player.parentPhone }}</p>
+    <div style="margin-bottom: 0.2em;">
+      <h3 class="mat-h3">Other Info</h3>
+      <p><strong>Player's Height:   </strong>{{ player?.player.playerHeight }}</p>
+      <p><strong>Player's Weight:   </strong>{{ player?.player.parentWeight }}</p>
+      <p><strong>Player's Age:   </strong>{{ player?.player.playerAge }}</p>
+      <p><strong>Player's Health Record:   </strong>{{ player?.player.playerHealthStatus }}</p>
+      <p><strong>Player's School:   </strong>{{ player?.player.playerSchool }}</p>
+      <p><strong>Player's Residence:   </strong>{{ player?.player.playerResidence }}</p>
+      <p><strong>Player's ADM:   </strong>{{ player?.player.playerADM }}</p>
+    </div>
+    <!-- <button mat-raised-button color="primary" (click)="onModify()">Modify</button> -->
+    <!-- <button mat-raised-button color="warn" (click)="onDelete()">Delete</button> -->
+    <p>{{ errorMessage }}</p>
+  </mat-card-content>
+</mat-card>

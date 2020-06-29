@@ -1,0 +1,29 @@
+<mat-spinner *ngIf="loading"></mat-spinner>
+<mat-card *ngIf="!loading" class="login-form">
+  <h1 mat-card-title>Players</h1>
+  <mat-card-subtitle>All Rongai Soccer Academy Players!</mat-card-subtitle>
+  <mat-card-content *ngIf="players.length <= 0">
+    <p>No players to show!</p>
+  </mat-card-content>
+  <mat-card-content *ngIf="players.length > 0">
+    <mat-expansion-panel *ngFor="let player of players">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h3>{{ player.playerFirstName + " " + player.playerLastName  }}</h3>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <h3 class="mat-h3">Parent's Info</h3>
+      <p><strong>Parent's Name : </strong>{{ player.parentFirstName + " " + player.parentLastName }}</p>
+      <p><strong>Parent's Phone : </strong>{{ player.parentPhone }}</p>
+      <h3 class="mat-h3">Other Info</h3>
+      <p><strong>Player's Height : </strong>{{ player.playerHeight }}</p>
+      <p><strong>Player's Weight : </strong>{{ player.parentWeight }}</p>
+      <p><strong>Player's Age : </strong>{{ player.playerAge }}</p>
+      <p><strong>Player's Health Status : </strong>{{ player.playerHealthStatus }}</p>
+      <p><strong>Player's School : </strong>{{ player.playerSchool }}</p>
+      <p><strong>Player's Residence : </strong>{{ player.playerResidence }}</p>
+      <p><strong>Player's ID : </strong>{{ player.playerADM }}</p>
+      <button (click)="onOpenPlayer(player._id)" mat-raised-button color="primary">See player</button>
+    </mat-expansion-panel>
+  </mat-card-content>
+</mat-card>

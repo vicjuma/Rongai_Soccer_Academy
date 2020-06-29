@@ -1,0 +1,48 @@
+  <div class="login-page">
+    <div class="form">
+      <form [formGroup]="PlayerForm">
+        <mat-form-field>
+          <input matInput type="text" placeholder="first name" formControlName="playerFirstName">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="text" placeholder="last name" formControlName="playerLastName">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="text" placeholder="parent first name" formControlName="parentFirstName">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="text" placeholder="parent last name" formControlName="parentLastName">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="text" placeholder="phone" formControlName="parentPhone">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="number" placeholder="height" formControlName="playerHeight">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="number" placeholder="weight" formControlName="playerWeight">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="number" placeholder="age" formControlName="playerAge">
+        </mat-form-field>
+        <mat-form-field>
+          <textarea matInput placeholder="Health Status" rows="6" formControlName="playerHealthStatus"></textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="school" type="text" formControlName="playerSchool">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="residence" type="text" formControlName="playerResidence">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="adm" type="text" formControlName="playerADM">
+        </mat-form-field>
+        <!-- <mat-form-field>
+          <input matInput placeholder="password" type="text" formControlName="password">
+        </mat-form-field> -->
+        <button mat-raised-button color="primary" type="button" [disabled]="PlayerForm.invalid" (click)="onSubmit()">Submit</button>
+        <p>{{ errorMessage }}</p>
+      </form>
+    </div>
+  </div>
+<!-- </mat-card> -->
